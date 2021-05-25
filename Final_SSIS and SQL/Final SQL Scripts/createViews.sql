@@ -10,9 +10,8 @@
 
 USE [DestinationSystem]
 GO
-
 /****** Object:  View [dbo].[vdimChannel]    Script Date: 5/24/2021 1:49:49 PM ******/
-DROP VIEW [dbo].[vdimChannel]
+DROP VIEW IF EXISTS [dbo].[vdimChannel]
 GO
 
 SET ANSI_NULLS ON
@@ -27,12 +26,12 @@ SELECT  dimChannelID, SourceChannelID, SourceCategoryID, ChannelCategoryName, Ch
 FROM    dbo.dimChannel
 GO
 
+
+
 USE [DestinationSystem]
 GO
-
-
 /****** Object:  View [dbo].[vdimCustomer]    Script Date: 5/24/2021 1:57:21 PM ******/
-DROP VIEW [dbo].[vdimCustomer]
+DROP VIEW IF EXISTS [dbo].[vdimCustomer]
 GO
 
 SET ANSI_NULLS ON
@@ -47,11 +46,11 @@ SELECT  dimCustomerID, dimLocationID, SourceCustomerID, CustomerFullName, Custom
 FROM    dbo.dimCustomer
 GO
 
+
 USE [DestinationSystem]
 GO
-
 /****** Object:  View [dbo].[vdimDate]    Script Date: 5/24/2021 1:57:56 PM ******/
-DROP VIEW [dbo].[vdimDate]
+DROP VIEW IF EXISTS [dbo].[vdimDate]
 GO
 
 SET ANSI_NULLS ON
@@ -66,11 +65,12 @@ SELECT  dimDateID, FullDate, DayNumberOfWeek, DayNameOfWeek, DayNumberOfMonth, D
 FROM    dbo.dimDate
 GO
 
+
+
 USE [DestinationSystem]
 GO
-
 /****** Object:  View [dbo].[vdimLocation]    Script Date: 5/24/2021 1:59:03 PM ******/
-DROP VIEW [dbo].[vdimLocation]
+DROP VIEW IF EXISTS [dbo].[vdimLocation]
 GO
 
 SET ANSI_NULLS ON
@@ -86,8 +86,10 @@ FROM    dbo.dimLocation
 GO
 
 
+USE [DestinationSystem]
+GO
 /****** Object:  View [dbo].[vdimProduct]    Script Date: 5/24/2021 1:59:30 PM ******/
-DROP VIEW [dbo].[vdimProduct]
+DROP VIEW IF EXISTS [dbo].[vdimProduct]
 GO
 
 SET ANSI_NULLS ON
@@ -103,9 +105,10 @@ FROM    dbo.dimProduct
 GO
 
 
-
+USE [DestinationSystem]
+GO
 /****** Object:  View [dbo].[vdimReseller]    Script Date: 5/24/2021 2:00:21 PM ******/
-DROP VIEW [dbo].[vdimReseller]
+DROP VIEW IF EXISTS [dbo].[vdimReseller]
 GO
 
 SET ANSI_NULLS ON
@@ -120,8 +123,11 @@ SELECT  dimResellerID, dimLocationID, SourceResellerID, ResellerName, ContactNam
 FROM    dbo.dimReseller
 GO
 
+
+USE [DestinationSystem]
+GO
 /****** Object:  View [dbo].[vdimStore]    Script Date: 5/24/2021 2:00:50 PM ******/
-DROP VIEW [dbo].[vdimStore]
+DROP VIEW IF EXISTS [dbo].[vdimStore]
 GO
 
 SET ANSI_NULLS ON
@@ -137,8 +143,10 @@ FROM    dbo.dimStore
 GO
 
 
+USE [DestinationSystem]
+GO
 /****** Object:  View [dbo].[vfactProductSalesTarget]    Script Date: 5/24/2021 2:01:19 PM ******/
-DROP VIEW [dbo].[vfactProductSalesTarget]
+DROP VIEW IF EXISTS [dbo].[vfactProductSalesTarget]
 GO
 
 SET ANSI_NULLS ON
@@ -154,8 +162,10 @@ FROM    dbo.factProductSalesTarget
 GO
 
 
+USE [DestinationSystem]
+GO
 /****** Object:  View [dbo].[vfactSalesActual]    Script Date: 5/24/2021 2:01:46 PM ******/
-DROP VIEW [dbo].[vfactSalesActual]
+DROP VIEW IF EXISTS [dbo].[vfactSalesActual]
 GO
 
 SET ANSI_NULLS ON
@@ -170,8 +180,12 @@ SELECT  factSalesActualID, dimProductID, dimStoreID, dimResellerID, dimCustomerI
 FROM    dbo.factSalesActual
 GO
 
+
+
+USE [DestinationSystem]
+GO
 /****** Object:  View [dbo].[vfactSRCSalesTarget]    Script Date: 5/24/2021 2:02:13 PM ******/
-DROP VIEW [dbo].[vfactSRCSalesTarget]
+DROP VIEW IF EXISTS [dbo].[vfactSRCSalesTarget]
 GO
 
 SET ANSI_NULLS ON
